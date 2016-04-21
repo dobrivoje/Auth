@@ -1,4 +1,4 @@
-package org.dobrivoje.auth;
+package org.superbapps.auth;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -17,7 +17,11 @@ public interface IAccessAuthControl {
 
     boolean hasRole(String role);
 
+    boolean hasRole(Enum role);
+
     boolean isPermitted(String permission);
+
+    boolean isPermitted(Enum permission);
 
     String getPrincipal();
 

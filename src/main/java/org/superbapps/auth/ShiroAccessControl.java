@@ -1,4 +1,4 @@
-package org.dobrivoje.auth;
+package org.superbapps.auth;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -85,10 +85,30 @@ public class ShiroAccessControl implements IAccessAuthControl {
     }
 
     @Override
+    public boolean hasRole(Enum role) {
+        boolean o = false;
+        try {
+            o = subject.hasRole(role.toString());
+        } catch (Exception e) {
+        }
+        return o;
+    }
+
+    @Override
     public boolean isPermitted(String permission) {
         boolean o = false;
         try {
             o = subject.isPermitted(permission);
+        } catch (Exception e) {
+        }
+        return o;
+    }
+
+    @Override
+    public boolean isPermitted(Enum permission) {
+        boolean o = false;
+        try {
+            o = subject.isPermitted(permission.toString());
         } catch (Exception e) {
         }
         return o;
