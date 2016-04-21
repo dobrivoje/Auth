@@ -73,11 +73,6 @@ public enum Roles {
     P_WS_CUSTOMERS_READ("p:ws:customers:read"),
     P_WS_CUSTOMERS_MAINTENANCE("p:ws:customers:maintenance"),
     //
-    // PERMISSIONS CRM
-    //
-    P_WS_CRM_READ("p:ws:crm:read"),
-    P_WS_CRM_MAINTENANCE("p:ws:crm:maintenance"),
-    //
     // PERMISSIONS SELL EXCEL
     //
     P_WS_EXCEL_IMPORT("p:ws:excel:import"),

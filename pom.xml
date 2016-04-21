@@ -3,9 +3,25 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.superbapps</groupId>
     <artifactId>auth-mol</artifactId>
-    <version>2.0-Beta</version>
+    <name>Auth</name>
+    <version>2.0.1-Beta</version>
     <packaging>jar</packaging>
     <dependencies>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-all</artifactId>
@@ -18,11 +34,13 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    <description>2.0-Beta - 21.4.2016. 11:20
-- Kompletna refaktorizacija
-- Jedinstveni modul autentifikacije za sve buduće MOL aplikacije
+    <description>v1.3 - beta - 20.4.2016 9:39 
+        - Urađena kompletna refaktorizacija
+        - Zamenjeni "ini" fajlovi (staro za novo) kao i stara klasa Roles za enum Roles.
+        - Urađena delimična testiranja.
 
-1.0 - 17.4.2016. - Izmena imena, a sve ostalo isto kao i v 1.0    
+        v1.2 - beta - 20.4.2016 - Početak razvoja novog Auth modula koji bi bio univerzalan.
+        -Izmena paketa iz org.dobrivoje.auth u org.supperbapps.auth
+        -kreiranje novog shiro ini i umesto klase sa rolama i dozvolama, enum-a.
     </description>
-    <name>Auth</name>
 </project>

@@ -20,7 +20,8 @@ public class testPrava2 {
         IAccessAuthControl IAC = new IntermolADAccessControl();
 
         try {
-            IAC.login("ws", "");
+            // IAC.login("ws", "");
+            IAC.login("fs", "");
             System.err.println(IAC.getPrincipal() + " isAuthenticated ? " + IAC.authenticated());
 
             System.err.println("Test 1: ROLES MF :");
@@ -67,6 +68,10 @@ public class testPrava2 {
 
             if (IAC.isPermitted(Roles.P_MF_RETAIL_REPORTS_GENERATE)) {
                 System.err.println("HAS permission : " + Roles.P_MF_RETAIL_REPORTS_GENERATE);
+            }
+
+            if (IAC.hasRole(Roles.R_WS_CRM_MAINTENANCE)) {
+                System.err.println("HAS role : " + Roles.R_WS_CRM_MAINTENANCE);
             }
 
         } catch (Exception e) {
