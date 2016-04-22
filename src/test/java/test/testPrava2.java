@@ -76,7 +76,10 @@ public class testPrava2 {
                 System.err.println(IAC.getPrincipal() + " HAS ROLE : " + Roles.R_CRM_MAINTENANCE);
             }
             if (IAC.hasRole(Roles.P_FS_READ)) {
-                System.err.println(IAC.getPrincipal() + " HAS PERMISSION : " + Roles.P_FS_READ);
+                System.err.println(IAC.getPrincipal() + " HAS ROLE : " + Roles.P_FS_READ);
+            }
+            if (IAC.hasRole(Roles.R_WS_EXCEL_ALL)) {
+                System.err.println(IAC.getPrincipal() + " HAS ROLE : " + Roles.R_WS_EXCEL_ALL);
             }
 
         } catch (Exception e) {
