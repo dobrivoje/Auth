@@ -83,8 +83,13 @@ public enum Roles {
     //
     // PERMISSIONS FUELSTATIONS MANAGEMENT
     //
-    P_WS_FS_READ("p:ws:fs:read"),
-    P_WS_FS_MAINTENANCE("p:ws:fs:maintenance");
+    P_FS_READ("p:fs:read"),
+    P_FS_MAINTENANCE("p:fs:maintenance"),
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="FS">
+    R_FS_MAINTENANCE("R_FS_MAINTENANCE"),
+    R_FS_READ("R_FS_READ");
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Support..">
@@ -114,6 +119,14 @@ public enum Roles {
 
     public static List<Roles> getApp_WS_Permissions() {
         return filterByName("P_WS");
+    }
+
+    public static List<Roles> getApp_FS_Roles() {
+        return filterByName("R_FS");
+    }
+
+    public static List<Roles> getApp_FS_Permissions() {
+        return filterByName("P_FS");
     }
 
     private static List<Roles> filterByName(String what) {
