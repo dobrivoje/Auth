@@ -61,12 +61,24 @@ public class testPrava2 {
             }
 
             System.err.println("--------------Test All Permissions------------------------");
-            
+
             for (Roles p : Roles.values()) {
                 if (IAC.isPermitted(p)) {
                     System.err.println(IAC.getPrincipal() + " IS PERMITTED : " + p.name());
                 }
             }
+
+            System.err.println("--------------Roles 2------------------------");
+            if (IAC.hasRole(Roles.R_FS_MAINTENANCE)) {
+                System.err.println(IAC.getPrincipal() + " HAS ROLE : " + Roles.R_FS_MAINTENANCE);
+            }
+            if (IAC.hasRole(Roles.R_CRM_MAINTENANCE)) {
+                System.err.println(IAC.getPrincipal() + " HAS ROLE : " + Roles.R_CRM_MAINTENANCE);
+            }
+            if (IAC.hasRole(Roles.P_FS_READ)) {
+                System.err.println(IAC.getPrincipal() + " HAS PERMISSION : " + Roles.P_FS_READ);
+            }
+
         } catch (Exception e) {
             System.err.println("greška!");
             System.err.println(e.toString());
