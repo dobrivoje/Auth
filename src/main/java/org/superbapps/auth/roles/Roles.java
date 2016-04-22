@@ -61,8 +61,7 @@ public enum Roles {
     R_WS_CARDS_USER("R_WS_CARDS_USER"),
     R_WS_FS_MANAGER("R_WS_FS_MANAGER"),
     R_WS_FS_USER("R_WS_FS_USER"),
-    R_WS_CRM_READ("R_WS_CRM_READ"),
-    R_WS_CRM_MAINTENANCE("R_WS_CRM_MAINTENANCE"),
+    R_CRM_MAINTENANCE("R_CRM_MAINTENANCE"),
     //
     // EXCEL ROLES
     //
@@ -70,8 +69,7 @@ public enum Roles {
     //
     // PERMISSIONS CUSTOMERS
     //
-    P_WS_CUSTOMERS_READ("p:ws:customers:read"),
-    P_WS_CUSTOMERS_MAINTENANCE("p:ws:customers:maintenance"),
+    P_CRM_READ("p:crm:read"),
     //
     // PERMISSIONS SELL EXCEL
     //

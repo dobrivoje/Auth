@@ -30,6 +30,8 @@ public class testPrava2 {
 
             System.err.println("Test 2: ROLES WS :");
             System.err.println(Roles.getApp_WS_Roles());
+
+            System.err.println("Test 2: PERMISSIONS WS :");
             System.err.println(Roles.getApp_WS_Permissions());
 
             System.err.println("Test 3: Roles1.values() :");
@@ -46,35 +48,28 @@ public class testPrava2 {
             System.err.println("--------------Permissions------------------------");
             System.err.println("P: " + Roles.getApp_WS_Permissions());
 
-            if (IAC.isPermitted(Roles.P_WS_CARDS_READ)) {
-                System.err.println("HAS permission : " + Roles.P_WS_CARDS_READ);
-            }
-            if (IAC.isPermitted(Roles.P_MF_HSE_FS_USER_ALLWP_SEARCH)) {
-                System.err.println("HAS permission : " + Roles.P_MF_HSE_FS_USER_ALLWP_SEARCH);
-            }
-            if (IAC.isPermitted(Roles.P_MF_RETAIL_REPORTS_GENERATE)) {
-                System.err.println("HAS permission : " + Roles.P_MF_RETAIL_REPORTS_GENERATE);
-            }
-            if (IAC.isPermitted(Roles.P_MF_REPORT_OBRACUN)) {
-                System.err.println("HAS permission : " + Roles.P_MF_REPORT_OBRACUN);
-            }
-            if (IAC.isPermitted(Roles.P_MF_REPORT_SPEC)) {
-                System.err.println("HAS permission : " + Roles.P_MF_REPORT_SPEC);
+            if (IAC.isPermitted(Roles.P_CRM_READ)) {
+                System.err.println(IAC.getPrincipal() + " IS PERMITTED : " + Roles.P_CRM_READ);
             }
 
-            if (IAC.isPermitted(Roles.P_MF_LOGIN)) {
-                System.err.println("HAS permission : " + Roles.P_MF_LOGIN);
+            if (IAC.isPermitted("p:crm:write")) {
+                System.err.println(IAC.getPrincipal() + " IS PERMITTED : " + "p:crm:write");
             }
 
-            if (IAC.isPermitted(Roles.P_MF_RETAIL_REPORTS_GENERATE)) {
-                System.err.println("HAS permission : " + Roles.P_MF_RETAIL_REPORTS_GENERATE);
+            if (IAC.isPermitted("p:crm:*")) {
+                System.err.println(IAC.getPrincipal() + " IS PERMITTED : " + "p:crm:*");
             }
 
-            if (IAC.hasRole(Roles.R_WS_CRM_MAINTENANCE)) {
-                System.err.println("HAS role : " + Roles.R_WS_CRM_MAINTENANCE);
+            System.err.println("--------------Test All Permissions------------------------");
+            
+            for (Roles p : Roles.values()) {
+                if (IAC.isPermitted(p)) {
+                    System.err.println(IAC.getPrincipal() + " IS PERMITTED : " + p.name());
+                }
             }
-
         } catch (Exception e) {
+            System.err.println("greška!");
+            System.err.println(e.toString());
         }
     }
 
